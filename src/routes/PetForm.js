@@ -1,3 +1,4 @@
+import "./Petform.css";
 import { useEffect } from "react";
 import { listPets, createPet } from "../services/pets";
 
@@ -30,30 +31,32 @@ function PetForm() {
     event.target.reset();
   };
   return (
-    <div>
-      <t1>Insira seu pet na lista</t1>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <h1>Insira seu pet na lista</h1>
+      <form className="form" onSubmit={handleSubmit}>
         <label>
           Nome: <input type="text" name="name" />
         </label>
-        <label>
-          Raça: <input type="text" name="breed" />
-        </label>
+        <div className="flex">
+          <label>
+            Raça: <input type="text" name="breed" />
+          </label>
+          <select name="species">
+            <option value="Gato">Gato</option>
+            <option value="Cachorro">Cachorro</option>
+          </select>
+          <select name="gender">
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
+          </select>
+        </div>
         <label>
           Idade: <input type="number" name="age" />
         </label>
-        <select name="species">
-          <option value="Gato">Gato</option>
-          <option value="Cachorro">Cachorro</option>
-        </select>
-        <select name="gender">
-          <option value="Macho">Macho</option>
-          <option value="Fêmea">Fêmea</option>
-        </select>
         <label>
           Imagem do pet (url): <input type="text" name="url" />
         </label>
-        <button type="submit">Enviar</button>
+        <button type="submit">Inserir</button>
       </form>
     </div>
   );

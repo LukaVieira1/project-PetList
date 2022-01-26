@@ -1,0 +1,12 @@
+.auth-title {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  text-decoration: none;
+}
+
+.auth-button {
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: 12px;
+}

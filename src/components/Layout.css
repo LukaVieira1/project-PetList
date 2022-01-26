@@ -1,0 +1,20 @@
+.navbar-header {
+  background: #1c1c1c;
+  height: 100px;
+}
+
+.navbar-titles {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.navbar-title {
+  color: white;
+  text-decoration: none;
+}
+
+label {
+  margin-top: 20px;
+}

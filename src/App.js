@@ -1,3 +1,4 @@
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import PetForm from "./routes/PetForm";
 import Login from "./routes/Login";

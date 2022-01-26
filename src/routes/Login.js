@@ -1,3 +1,4 @@
+import "./Login.css";
 import { useAuth } from "../context/auth-context";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -24,17 +25,20 @@ function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          email: <input type="email" name="email" />
-        </label>
-        <label>
-          senha: <input type="password" name="password" />
-        </label>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <>
+      <div className="container">
+        <h1>Faça seu login</h1>
+        <div className="login">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <p>Email</p>
+            <input type="email" name="email" />
+            <p>Senha</p>
+            <input type="password" name="password" />
+            <button type="submit">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 }
 

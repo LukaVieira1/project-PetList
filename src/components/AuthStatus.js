@@ -1,26 +1,32 @@
 import React from "react";
 import { useAuth } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import "./AuthStatus.css";
 
 function AuthStatus() {
   const auth = useAuth();
   const navigate = useNavigate();
-  console.log(auth.user);
 
   if (!auth.user) {
-    return <p>Você não está logado</p>;
+    return (
+      <Link className="auth-title" to="/protected">
+        Faça seu login aqui
+      </Link>
+    );
   }
   return (
-    <p>
+    <h1 className="auth-title">
       Bem vindo {auth.user.name}!
       <button
+        className="auth-button"
         onClick={() => {
           auth.logout(() => navigate("/"));
         }}
       >
         Sair
       </button>
-    </p>
+    </h1>
   );
 }
 

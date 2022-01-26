@@ -1,18 +1,20 @@
 import { Link, Outlet } from "react-router-dom";
 import AuthStatus from "./AuthStatus";
+import "./Layout.css";
 
 function Layout() {
   return (
-    <div>
+    <div className="navbar-header">
       <AuthStatus />
-      <ul>
-        <li>
-          <Link to="/">Lista de Pets</Link>
-        </li>
-        <li>
-          <Link to="/protected">Inserir um Pet</Link>
-        </li>
-      </ul>
+
+      <div className="navbar-titles">
+        <Link className="navbar-title" to="/">
+          Lista de Pets
+        </Link>
+        <Link className="navbar-title" to="/protected">
+          Inserir um Pet
+        </Link>
+      </div>
 
       <Outlet />
     </div>
